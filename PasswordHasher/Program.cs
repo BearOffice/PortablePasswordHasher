@@ -61,5 +61,11 @@ for (var i = 0; i < remain; i++)
     ConsoleHelper.RemoveLastLine();
 }
 
+// overwrite clipboard's history
+var randStr = new RandomString();
+for (var i = 0; i < 50; i++)
+{
+    await cb.SetTextAsync(randStr.GetUniqueString());
+}
 await cb.SetTextAsync("");
 Console.WriteLine("Clipboard cleared.");
